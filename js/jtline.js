@@ -494,7 +494,7 @@
                 if (formatBodyCnt)
                     return options.formatBodyContent(bodyCnt, obj);
                 else
-                    return '<p>' + bodyCnt + '</p>';
+                    return '<strong>' + bodyCnt + '</strong>';
             }
             var _attacheEvents = function () {
 
