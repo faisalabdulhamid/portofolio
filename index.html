@@ -12,12 +12,15 @@
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.5 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
 	
 	<!-- TimeLine -->
 	
+	<!-- Progress Bar -->
+	<link rel="stylesheet" href="css/asPieProgress.css">
+	<link rel="stylesheet" href="css/animate.min.css">
 
 	<link rel="stylesheet" href="css/portofolio.css">
 </head>
@@ -42,12 +45,42 @@
 
 	    <section class="section" id="section3">
 	        <div class="intro">
-	        	<h1>SKill</h1>
+	        	<h1>SKILL</h1>
 	        	<div class="skill">
-		            <div class="progress-skill" id="skill-php"></div>
-		            <div class="progress-skill" id="skill-laravel"></div>
-		            <div class="progress-skill" id="skill-ci"></div>
-		            <div class="progress-skill"></div>
+		            <div class="pie_progress" role="progressbar" data-goal="80" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">PHP</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+		            <div class="pie_progress" role="progressbar" data-goal="72" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">LARAVEL</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+		            <div class="pie_progress" role="progressbar" data-goal="80" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">Codeigniter</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+		            <div class="pie_progress" role="progressbar" data-goal="70" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">MYSQL</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+	        	</div>
+	        	<div class="skill">
+		            <div class="pie_progress" role="progressbar" data-goal="45" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">Vue.js</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+		            <div class="pie_progress" role="progressbar" data-goal="62" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">HTML5</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+		            <div class="pie_progress" role="progressbar" data-goal="64" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">CSS3</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
+		            <div class="pie_progress" role="progressbar" data-goal="35" data-barcolor="#3daf2c" data-barsize="10" aria-valuemin="0" aria-valuemax="100">
+			          <div class="pie_progress__content">React.js</div>
+			          <div class="pie_progress__number"></div>
+			        </div>
 	        	</div>
 	        </div>
 	    </section>
@@ -55,7 +88,12 @@
 	    <section class="section" id="section4">
 	        <div class="intro">
 	        	<h1>Portofolio</h1>
-	            
+	            <div class="slide active" id="slide2">
+		            <h1>Slide 2</h1>
+		        </div>
+		        <div class="slide" id="slide3">
+		            <h1>Slide 3</h1>
+		        </div>
 	        </div>
 	    </section>
 
@@ -82,6 +120,30 @@
 
 	</div>
 
+	    <!--DEMO01-->
+        <div id="modal-portofolio-simdesa">
+            <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+            <div  id="btn-close-modal" class="close-modal-portofolio-simdesa"> 
+                Close
+            </div>
+                
+            <div class="modal-content">
+                CONTENt SIMDESA
+            </div>
+        </div>
+
+	    <!--DEMO01-->
+        <div id="modal-portofolio-absensi">
+            <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+            <div  id="btn-close-modal" class="close-modal-portofolio-absensi"> 
+                Close 
+            </div>
+                
+            <div class="modal-content">
+                CONTENT Absensu
+            </div>
+        </div>
+
 	<!-- jQuery 2.2.0 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<!-- jQuery UI 1.11.4 -->
@@ -98,7 +160,10 @@
     <script type="text/javascript" src="js/jtline.js"></script>
 
     <!-- {Progress Bar} -->
-    <script type="text/javascript" src="js/progress-bar.js"></script>
+    <script type="text/javascript" src="js/jquery-asPieProgress.js"></script>
+
+    <!-- MODAL -->
+    <script type="text/javascript" src="js/animatedModal.min.js"></script>
 
     <script type="text/javascript" src="js/portofolio.js"></script>
 

@@ -1,8 +1,11 @@
 $(document).ready(function() {
-	$('#scroll-main').fullpage({
+	var fullpage = $('#scroll-main').fullpage({
 		sectionsColor: ['#42a5f5', '#4BBFC3', '#81c784', '#ff8a65', '#2196f3', '#4db6ac', '#f06292'],
 		anchors: ['DataDiri', 'Pendidikan', 'Skill', 'Portofolio', 'Organisasi', 'Pelatihan', 'Kontak'],
-		menu: '#menu',
+		navigation: true,
+    navigationPosition: 'right',
+    navigationTooltips: ['Data Diri', 'Pendidikan', 'Skill', 'Portofolio', 'Organisasi', 'Pelatihan', 'Kontak'],
+    slidesNavigation: true,
 	});
 
   // dataRoot : '/'
@@ -73,30 +76,61 @@ $(document).ready(function() {
   );
 
   // Progress Bar
-  $("#skill-php").circularProgress({
-      line_width: 8,
-      color: "#ccc",
-      starting_position: 0, // 12.00 o' clock position, 25 stands for 3.00 o'clock (clock-wise)
-      percent: 0, // percent starts from
-      percentage: true,
-      text: "PHP"
-  }).circularProgress('animate', 75, 5000);
-  $("#skill-laravel").circularProgress({
-      line_width: 8,
-      color: "#ccc",
-      starting_position: 0, // 12.00 o' clock position, 25 stands for 3.00 o'clock (clock-wise)
-      percent: 0, // percent starts from
-      percentage: true,
-      text: "LARAVEL"
-  }).circularProgress('animate', 65, 5000);
-  $("#skill-ci").circularProgress({
-      line_width: 8,
-      color: "#ccc",
-      starting_position: 0, // 12.00 o' clock position, 25 stands for 3.00 o'clock (clock-wise)
-      percent: 0, // percent starts from
-      percentage: true,
-      text: "CI"
-  }).circularProgress('animate', 78, 5000);
+  $('.pie_progress').asPieProgress({
+    namespace: 'pie_progress'
+  });
+  // Example with grater loading time - loads longer
+  $('.pie_progress--slow').asPieProgress({
+    namespace: 'pie_progress',
+    goal: 100,
+    min: 0,
+    max: 1000,
+    speed: 200,
+    easing: 'linear'
+  });
+  $('.pie_progress').asPieProgress('start');
 
+
+
+
+  $("#portofolio-simdesa").animatedModal({
+      modalTarget:'modal-portofolio-simdesa',
+      animatedIn:'lightSpeedIn',
+      animatedOut:'bounceOutDown',
+      color:'#3498db',
+      // Callbacks
+      beforeOpen: function() {
+          console.log("The animation was called");
+      },           
+      afterOpen: function() {
+          console.log("The animation is completed");
+      }, 
+      beforeClose: function() {
+          console.log("The animation was called");
+      }, 
+      afterClose: function() {
+          console.log("The animation is completed");
+      }
+  });
+
+  $("#portofolio-absensi").animatedModal({
+    modalTarget:'modal-portofolio-absensi',
+    animatedIn:'lightSpeedIn',
+    animatedOut:'bounceOutDown',
+    color:'#3498db',
+    // Callbacks
+    beforeOpen: function() {
+        console.log("The animation was called");
+    },           
+    afterOpen: function() {
+        
+    }, 
+    beforeClose: function() {
+        console.log("The animation was called");
+    }, 
+    afterClose: function() {
+        // $('#scroll-main').fullpage({'resetSliders'});
+    }
+  });
 
 });
