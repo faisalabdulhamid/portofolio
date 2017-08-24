@@ -1,11 +1,15 @@
 $(document).ready(function() {
 	var fullpage = $('#scroll-main').fullpage({
-		sectionsColor: ['#42a5f5', '#4BBFC3', '#81c784', '#ff8a65', '#2196f3', '#4db6ac', '#f06292'],
+		sectionsColor: ['#42a5f5', '#4BBFC3', '#81c784', '#ff8a65', '#2196f3', '#4db6ac', '#5c6bc0'],
 		anchors: ['DataDiri', 'Pendidikan', 'Skill', 'Portofolio', 'Organisasi', 'Pelatihan', 'Kontak'],
 		navigation: true,
     navigationPosition: 'right',
     navigationTooltips: ['Data Diri', 'Pendidikan', 'Skill', 'Portofolio', 'Organisasi', 'Pelatihan', 'Kontak'],
     slidesNavigation: true,
+    // verticalCentered: false,
+
+    // //to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+    // css3:false
 	});
 
   // dataRoot : '/'
@@ -69,11 +73,11 @@ $(document).ready(function() {
   });
 
   /* Demo purposes only */
-  $(".hover").mouseleave(
-    function () {
-        $(this).removeClass("hover");
-    }
-  );
+  // $(".hover").mouseleave(
+  //   function () {
+  //       $(this).removeClass("hover");
+  //   }
+  // );
 
   // Progress Bar
   $('.pie_progress').asPieProgress({
@@ -90,47 +94,21 @@ $(document).ready(function() {
   });
   $('.pie_progress').asPieProgress('start');
 
-
-
-
-  $("#portofolio-simdesa").animatedModal({
-      modalTarget:'modal-portofolio-simdesa',
-      animatedIn:'lightSpeedIn',
-      animatedOut:'bounceOutDown',
-      color:'#3498db',
-      // Callbacks
-      beforeOpen: function() {
-          console.log("The animation was called");
-      },           
-      afterOpen: function() {
-          console.log("The animation is completed");
-      }, 
-      beforeClose: function() {
-          console.log("The animation was called");
-      }, 
-      afterClose: function() {
-          console.log("The animation is completed");
-      }
-  });
-
-  $("#portofolio-absensi").animatedModal({
-    modalTarget:'modal-portofolio-absensi',
-    animatedIn:'lightSpeedIn',
-    animatedOut:'bounceOutDown',
-    color:'#3498db',
-    // Callbacks
-    beforeOpen: function() {
-        console.log("The animation was called");
-    },           
-    afterOpen: function() {
-        
-    }, 
-    beforeClose: function() {
-        console.log("The animation was called");
-    }, 
-    afterClose: function() {
-        // $('#scroll-main').fullpage({'resetSliders'});
+  // typewriter
+  $('#typewriter').t({
+    speed:35,
+    speed_vary:true,
+    mistype:20,
+    typing:function(elem,chars_total,chars_left,_char){
+     if(_char=='*')foo();
+    },
+    fin:function(){
+     if(fin==!1){
+      fin=!!1; //avoids triggering after 'add' cmd
+      window.setTimeout(function(){$('#t').t('add','Still here?');},2e4);
+      window.setInterval(function(){$('#t').find('.t-caret').toggle();},5e2);
+     }
     }
   });
-
+  
 });
